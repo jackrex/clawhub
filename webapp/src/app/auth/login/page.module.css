@@ -1,0 +1,143 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border: 1px solid rgba(26, 24, 20, 0.08);
+  border-radius: 12px;
+  padding: 40px 36px;
+  box-shadow: 0 8px 30px rgba(26, 24, 20, 0.07);
+  text-align: center;
+}
+
+.seal {
+  width: 48px;
+  height: 48px;
+  background: #c23c2a;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 900;
+  font-size: 20px;
+  transform: rotate(-3deg);
+  box-shadow: 1px 1px 0 rgba(194, 60, 42, 0.3);
+  margin-bottom: 20px;
+}
+
+.title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1814;
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #7a756b;
+  margin-bottom: 28px;
+}
+
+.error {
+  background: rgba(194, 60, 42, 0.08);
+  border: 1px solid rgba(194, 60, 42, 0.2);
+  color: #c23c2a;
+  font-size: 13px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.field {
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1814;
+  margin-bottom: 6px;
+}
+
+.field input {
+  width: 100%;
+  padding: 10px 14px;
+  background: #f8f5f0;
+  border: 1px solid rgba(26, 24, 20, 0.15);
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1a1814;
+  font-family: 'Noto Sans SC', system-ui, sans-serif;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.field input:focus {
+  border-color: #c23c2a;
+  box-shadow: 0 0 0 3px rgba(194, 60, 42, 0.08);
+}
+
+.field input::placeholder {
+  color: #b0a99e;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 12px 24px;
+  background: #1a1814;
+  border: none;
+  border-radius: 8px;
+  color: #f8f5f0;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Noto Sans SC', system-ui, sans-serif;
+  transition: opacity 0.2s, transform 0.2s;
+  margin-top: 4px;
+}
+
+.submitBtn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.submitBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.toggle {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #7a756b;
+}
+
+.toggle button {
+  background: none;
+  border: none;
+  color: #c23c2a;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: 'Noto Sans SC', system-ui, sans-serif;
+  padding: 0;
+  margin-left: 4px;
+}
+
+.toggle button:hover {
+  text-decoration: underline;
+}

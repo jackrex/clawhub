@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=ZCOOL+XiaoWei&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg: #f8f5f0;
+  --bg-warm: #f3ede4;
+  --bg-card: #ffffff;
+  --bg-ink: #1a1814;
+  --bg-overlay: rgba(26,24,20,0.45);
+  --border: rgba(26,24,20,0.08);
+  --border-strong: rgba(26,24,20,0.15);
+  --text-ink: #1a1814;
+  --text-body: #3d3a34;
+  --text-secondary: #7a756b;
+  --text-muted: #b0a99e;
+  --accent: #c23c2a;
+  --accent-light: rgba(194,60,42,0.08);
+  --accent-hover: #a83220;
+  --gold: #b8963e;
+  --gold-light: rgba(184,150,62,0.1);
+  --success: #2d8a56;
+  --success-light: rgba(45,138,86,0.08);
+  --font-serif: 'Noto Serif SC','ZCOOL XiaoWei',serif;
+  --font-sans: 'Noto Sans SC',system-ui,sans-serif;
+  --font-mono: 'JetBrains Mono',monospace;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-xs: 6px;
+  --shadow-sm: 0 2px 12px rgba(26,24,20,0.04);
+  --shadow-md: 0 8px 30px rgba(26,24,20,0.07);
+  --shadow-lg: 0 16px 50px rgba(26,24,20,0.12);
+  --transition: 0.25s cubic-bezier(.4,0,.2,1);
+}
+
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+a { text-decoration: none; color: inherit; }
+button { font-family: var(--font-sans); cursor: pointer; border: none; background: none; }
+input, textarea, select { font-family: var(--font-sans); outline: none; }
+ul, ol { list-style: none; }
+img { max-width: 100%; display: block; }
+
+.ink-wash {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 120% 80% at 20% 10%, rgba(26,24,20,0.02), transparent 60%),
+    radial-gradient(ellipse 80% 60% at 85% 30%, rgba(194,60,42,0.02), transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.mountain-bg {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 300px;
+  opacity: 0.025;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 300'%3E%3Cpath fill='%231a1814' d='M0,300 L0,200 Q120,80 240,160 Q360,60 480,140 Q600,40 720,120 Q840,20 960,100 Q1080,30 1200,90 Q1320,50 1440,130 L1440,300 Z'/%3E%3C/svg%3E") no-repeat bottom center/cover;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
