@@ -1,6 +1,6 @@
-# 将 webapp 部署到 Vercel
+# 将项目部署到 Vercel
 
-本项目的 Web 应用（Next.js）位于 `webapp/` 目录。按以下步骤即可部署到 Vercel。
+本项目的 Web 应用（Next.js）位于仓库根目录。按以下步骤即可部署到 Vercel。
 
 ## 方式一：通过 Vercel 网站（推荐）
 
@@ -18,11 +18,10 @@ git push origin main
 
 1. 打开 [vercel.com](https://vercel.com)，登录后点击 **Add New → Project**。
 2. 从 Git 导入你的仓库（如 `clawhub`）。
-3. **重要**：在项目设置中，将 **Root Directory** 设置为 `webapp`（点击 Edit 后填入 `webapp` 并保存）。
-4. 在 **Environment Variables** 中添加（Supabase 在本地/.env.local 中已有的两个变量）：
+3. 在 **Environment Variables** 中添加（Supabase 在本地 `.env.local` 中已有的两个变量）：
    - `NEXT_PUBLIC_SUPABASE_URL`：你的 Supabase 项目 URL
    - `NEXT_PUBLIC_SUPABASE_ANON_KEY`：你的 Supabase 匿名/公钥
-5. 点击 **Deploy**，等待构建完成。
+4. 点击 **Deploy**，等待构建完成。
 
 部署完成后会得到类似 `https://xxx.vercel.app` 的地址。
 
@@ -37,12 +36,11 @@ npm i -g vercel
 vercel login
 ```
 
-### 2. 在 webapp 目录下部署
+### 2. 在项目根目录部署
 
-**必须**在 `webapp` 目录下执行，这样 Vercel 才会以 Next.js 项目识别：
+在仓库根目录执行即可，Vercel 会自动识别 Next.js 项目：
 
 ```bash
-cd webapp
 vercel
 ```
 
@@ -62,7 +60,6 @@ vercel
 ### 4. 生产环境部署
 
 ```bash
-cd webapp
 vercel --prod
 ```
 
@@ -70,6 +67,6 @@ vercel --prod
 
 ## 注意事项
 
-- **Root Directory**：若在网页端从仓库根目录导入，务必把 Root Directory 设为 `webapp`，否则会找不到 Next.js 项目。
+- **根目录**：Next.js 应用已在仓库根目录，无需设置 Root Directory。
 - **环境变量**：未配置 `NEXT_PUBLIC_SUPABASE_*` 时，与 Supabase 相关的功能会报错，务必在 Vercel 中配置。
 - **分支**：Vercel 默认会为每次 push 生成预览部署，生产域一般绑定 `main`（或你在设置里指定的生产分支）。
