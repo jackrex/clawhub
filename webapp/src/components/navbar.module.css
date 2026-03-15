@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(248, 245, 240, 0.88);
+  background: var(--nav-bg);
   backdrop-filter: blur(20px) saturate(1.2);
   border-bottom: 1px solid var(--border);
 }
@@ -83,7 +83,38 @@
 .right {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
+}
+
+.themeToggle {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 10px;
+  border-radius: var(--radius-xs);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid transparent;
+  transition: color 0.2s, background 0.2s, border-color 0.2s;
+}
+
+.themeToggle:hover {
+  color: var(--text-secondary);
+  background: var(--accent-light);
+  border-color: var(--border);
+}
+
+.themeDivider {
+  opacity: 0.4;
+  margin: 0 1px;
+  pointer-events: none;
+}
+
+.themeToggle .themeActive {
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .loginBtn {

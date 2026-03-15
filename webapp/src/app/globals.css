@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=ZCOOL+XiaoWei&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
-:root {
+/* ---------- 水墨风（默认） ---------- */
+:root,
+[data-theme="ink"] {
   --bg: #f8f5f0;
   --bg-warm: #f3ede4;
   --bg-card: #ffffff;
@@ -30,6 +32,39 @@
   --shadow-md: 0 8px 30px rgba(26,24,20,0.07);
   --shadow-lg: 0 16px 50px rgba(26,24,20,0.12);
   --transition: 0.25s cubic-bezier(.4,0,.2,1);
+  --nav-bg: rgba(248, 245, 240, 0.88);
+}
+
+/* ---------- 北欧简约风 ---------- */
+[data-theme="nordic"] {
+  --bg: #f5f5f4;
+  --bg-warm: #eaeae8;
+  --bg-card: #ffffff;
+  --bg-ink: #1c1c1c;
+  --border: rgba(28,28,28,0.06);
+  --border-strong: rgba(28,28,28,0.12);
+  --text-ink: #1c1c1c;
+  --text-body: #404040;
+  --text-secondary: #737373;
+  --text-muted: #a3a3a3;
+  --accent: #5b8a9e;
+  --accent-light: rgba(91,138,158,0.1);
+  --accent-hover: #4a7689;
+  --gold: #6b9080;
+  --gold-light: rgba(107,144,128,0.1);
+  --success: #2d8a56;
+  --success-light: rgba(45,138,86,0.08);
+  --font-serif: 'Noto Sans SC',system-ui,sans-serif;
+  --font-sans: 'Noto Sans SC',system-ui,sans-serif;
+  --font-mono: 'JetBrains Mono',monospace;
+  --radius: 10px;
+  --radius-sm: 8px;
+  --radius-xs: 6px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.06);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.08);
+  --transition: 0.2s ease;
+  --nav-bg: rgba(255, 255, 255, 0.9);
 }
 
 *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
@@ -50,6 +85,7 @@ input, textarea, select { font-family: var(--font-sans); outline: none; }
 ul, ol { list-style: none; }
 img { max-width: 100%; display: block; }
 
+/* 水墨风背景：仅 ink 主题显示 */
 .ink-wash {
   position: fixed;
   inset: 0;
@@ -70,6 +106,27 @@ img { max-width: 100%; display: block; }
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 300'%3E%3Cpath fill='%231a1814' d='M0,300 L0,200 Q120,80 240,160 Q360,60 480,140 Q600,40 720,120 Q840,20 960,100 Q1080,30 1200,90 Q1320,50 1440,130 L1440,300 Z'/%3E%3C/svg%3E") no-repeat bottom center/cover;
   pointer-events: none;
   z-index: 0;
+}
+
+[data-theme="nordic"] .ink-wash,
+[data-theme="nordic"] .mountain-bg {
+  display: none;
+}
+
+/* 北欧风背景：极简渐变 + 细节点阵 */
+.nordic-bg {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 100% 60% at 50% 0%, rgba(91,138,158,0.03), transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(107,144,128,0.02), transparent 40%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme="nordic"] .nordic-bg {
+  display: block;
 }
 
 @keyframes fadeIn {

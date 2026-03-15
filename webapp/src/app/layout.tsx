@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ThemeProvider } from "@/contexts/theme-context";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 
@@ -14,15 +15,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN">
+    <html lang="zh-CN" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var t=localStorage.getItem('clawhub-theme');document.documentElement.setAttribute('data-theme',t==='nordic'?'nordic':'ink');})();`,
+          }}
+        />
+      </head>
       <body>
-        <div className="ink-wash" />
-        <div className="mountain-bg" />
-        <Navbar />
-        <main style={{ position: "relative", zIndex: 1, paddingTop: 64, minHeight: "100vh" }}>
-          {children}
-        </main>
-        <Footer />
+        <ThemeProvider>
+          <div className="ink-wash" aria-hidden />
+          <div className="mountain-bg" aria-hidden />
+          <div className="nordic-bg" aria-hidden />
+          <Navbar />
+          <main style={{ position: "relative", zIndex: 1, paddingTop: 64, minHeight: "100vh" }}>
+            {children}
+          </main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

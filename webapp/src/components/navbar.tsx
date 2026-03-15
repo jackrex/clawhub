@@ -5,12 +5,14 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import type { User } from '@supabase/supabase-js'
+import { useTheme } from '@/contexts/theme-context'
 import styles from './navbar.module.css'
 
 export function Navbar() {
   const [user, setUser] = useState<User | null>(null)
   const [menuOpen, setMenuOpen] = useState(false)
   const router = useRouter()
+  const { theme, toggleTheme } = useTheme()
 
   useEffect(() => {
     const supabase = createClient()
@@ -48,6 +50,17 @@ export function Navbar() {
       </div>
 
       <div className={styles.right}>
+        <button
+          type="button"
+          className={styles.themeToggle}
+          onClick={toggleTheme}
+          title={theme === 'ink' ? '切换为北欧简约风' : '切换为水墨风'}
+          aria-label={theme === 'ink' ? '切换为北欧简约风' : '切换为水墨风'}
+        >
+          <span className={theme === 'ink' ? styles.themeActive : ''}>水墨</span>
+          <span className={styles.themeDivider}>/</span>
+          <span className={theme === 'nordic' ? styles.themeActive : ''}>北欧</span>
+        </button>
         {user ? (
           <div className={styles.userWrap}>
             <button

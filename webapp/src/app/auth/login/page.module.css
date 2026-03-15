@@ -9,53 +9,53 @@
 .card {
   width: 100%;
   max-width: 420px;
-  background: #ffffff;
-  border: 1px solid rgba(26, 24, 20, 0.08);
-  border-radius: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
   padding: 40px 36px;
-  box-shadow: 0 8px 30px rgba(26, 24, 20, 0.07);
+  box-shadow: var(--shadow-md);
   text-align: center;
 }
 
 .seal {
   width: 48px;
   height: 48px;
-  background: #c23c2a;
-  border-radius: 6px;
+  background: var(--accent);
+  border-radius: var(--radius-xs);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-family: 'Noto Serif SC', serif;
+  font-family: var(--font-serif);
   font-weight: 900;
   font-size: 20px;
   transform: rotate(-3deg);
-  box-shadow: 1px 1px 0 rgba(194, 60, 42, 0.3);
+  box-shadow: 1px 1px 0 var(--accent-light);
   margin-bottom: 20px;
 }
 
 .title {
-  font-family: 'Noto Serif SC', serif;
+  font-family: var(--font-serif);
   font-size: 24px;
   font-weight: 700;
-  color: #1a1814;
+  color: var(--text-ink);
   letter-spacing: 0.04em;
   margin-bottom: 6px;
 }
 
 .subtitle {
   font-size: 14px;
-  color: #7a756b;
+  color: var(--text-secondary);
   margin-bottom: 28px;
 }
 
 .error {
-  background: rgba(194, 60, 42, 0.08);
-  border: 1px solid rgba(194, 60, 42, 0.2);
-  color: #c23c2a;
+  background: var(--accent-light);
+  border: 1px solid var(--accent);
+  color: var(--accent);
   font-size: 13px;
   padding: 10px 14px;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   margin-bottom: 20px;
   text-align: left;
 }
@@ -69,43 +69,43 @@
   display: block;
   font-size: 13px;
   font-weight: 600;
-  color: #1a1814;
+  color: var(--text-ink);
   margin-bottom: 6px;
 }
 
 .field input {
   width: 100%;
   padding: 10px 14px;
-  background: #f8f5f0;
-  border: 1px solid rgba(26, 24, 20, 0.15);
-  border-radius: 8px;
+  background: var(--bg);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
   font-size: 14px;
-  color: #1a1814;
-  font-family: 'Noto Sans SC', system-ui, sans-serif;
-  transition: border-color 0.2s;
+  color: var(--text-ink);
+  font-family: var(--font-sans);
+  transition: border-color 0.2s, box-shadow 0.2s;
   outline: none;
 }
 
 .field input:focus {
-  border-color: #c23c2a;
-  box-shadow: 0 0 0 3px rgba(194, 60, 42, 0.08);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light);
 }
 
 .field input::placeholder {
-  color: #b0a99e;
+  color: var(--text-muted);
 }
 
 .submitBtn {
   width: 100%;
   padding: 12px 24px;
-  background: #1a1814;
+  background: var(--text-ink);
   border: none;
-  border-radius: 8px;
-  color: #f8f5f0;
+  border-radius: var(--radius-sm);
+  color: var(--bg);
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  font-family: 'Noto Sans SC', system-ui, sans-serif;
+  font-family: var(--font-sans);
   transition: opacity 0.2s, transform 0.2s;
   margin-top: 4px;
 }
@@ -124,16 +124,16 @@
 .toggle {
   margin-top: 20px;
   font-size: 13px;
-  color: #7a756b;
+  color: var(--text-secondary);
 }
 
 .toggle button {
   background: none;
   border: none;
-  color: #c23c2a;
+  color: var(--accent);
   font-size: 13px;
   cursor: pointer;
-  font-family: 'Noto Sans SC', system-ui, sans-serif;
+  font-family: var(--font-sans);
   padding: 0;
   margin-left: 4px;
 }
