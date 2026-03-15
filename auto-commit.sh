@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROJECT_DIR="/Users/jack/Proj/faceswap"
+PROJECT_DIR="/Users/jack/Proj/clawhub"
 LOG_FILE="$PROJECT_DIR/.auto-commit.log"
 
 cd "$PROJECT_DIR" || exit 1
