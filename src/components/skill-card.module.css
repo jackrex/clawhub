@@ -8,6 +8,8 @@
   display: block;
   position: relative;
   overflow: hidden;
+  text-decoration: none;
+  color: inherit;
 }
 
 .card::before {

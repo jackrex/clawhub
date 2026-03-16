@@ -1,10 +1,11 @@
 import type { Skill } from '@/lib/skills-data'
 import { formatNumber } from '@/lib/skills-data'
+import Link from 'next/link'
 import styles from './skill-card.module.css'
 
 export function SkillCard({ skill }: { skill: Skill }) {
   return (
-    <div className={styles.card}>
+    <Link href={`/explore/${skill.id}`} className={styles.card} aria-label={`查看 ${skill.name} 详情`}>
       <div className={styles.top}>
         <div className={styles.iconWrap}>{skill.icon}</div>
         {skill.highlighted && <span className={styles.badge}>精选</span>}
@@ -18,6 +19,6 @@ export function SkillCard({ skill }: { skill: Skill }) {
           <span>↓ {formatNumber(skill.downloads)}</span>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
